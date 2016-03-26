@@ -8,9 +8,9 @@ easy as executing:
 composer.phar require sgomez/simplesamlphp-module-twig ~1.0
 ```
 
-##Using
+##Using templates
 
-This module search in all modules this directory structure: ```modulename/**/Resources/views/``` and create a namespace
+This module search in all active modules this directory structure: ```modulename/resources/templates/``` and create a namespace
 for each module that has one.
 
 Render a template is as easy as this:
@@ -20,3 +20,11 @@ $engine = \SimpleSAML\Modules\Twig\TwigEngine::getInstance();
 echo $engine->render('@modulename/template.html.twig');
 ```
 
+##Using translations
+
+This module uses the [symfony/translation](https://symfony.com/doc/current/components/translation/index.html) library
+to search translations files in yml format on the next directory: ```modulename/resources/translations/```.
+
+The filename must have the next format: _modulename.locale.yml_
+
+You can use two twig filter: _trans_ and _transChoice_.
