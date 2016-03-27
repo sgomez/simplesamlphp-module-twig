@@ -27,4 +27,7 @@ to search translations files in yml format on the next directory: ```modulename/
 
 The filename must have the next format: _modulename.locale.yml_
 
-You can use two twig filter: _trans_ and _transChoice_.
+##Twig and translations
+
+This bundle uses the Symfony Twig Extension on [twig-bridge](https://github.com/symfony/twig-bridge) library. So
+ basically you can use [the same filters and blocks than Symfony](http://symfony.com/doc/current/book/translation.html).

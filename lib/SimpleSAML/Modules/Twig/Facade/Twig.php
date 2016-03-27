@@ -11,7 +11,7 @@
 namespace SimpleSAML\Modules\Twig\Facade;
 
 
-use SimpleSAML\Modules\Twig\Extension\I18n;
+use Symfony\Bridge\Twig\Extension\TranslationExtension;
 use Symfony\Component\Finder\Finder;
 use Symfony\Component\Finder\SplFileInfo;
 
@@ -55,7 +55,7 @@ class Twig
         }
 
         self::$instance = new \Twig_Environment($loader);
-        self::$instance->addExtension(new I18n());
+        self::$instance->addExtension(new TranslationExtension($translator));
 
         return self::$instance;
     }
